@@ -15,6 +15,7 @@ public class invoice {
 	private double paidAmount;
 	private double balance;
 
+	invoice inv = new invoice();
 	ArrayList<invoice> invoiceList = new ArrayList<invoice>();
 	Scanner sc = new Scanner(System.in);
 
@@ -146,24 +147,31 @@ public class invoice {
 
 	        System.out.print("Enter customer full name: ");
 	        String fullName = sc.next();
+	        inv.setCustomerFullName(fullName);
 
 	        System.out.print("Enter phone number: ");
 	        String phoneNumber = sc.next();
+	        inv.setPhoneNumber(invoiceDate);
 	        
 	        System.out.print("Enter invoice date (YYYY-MM-DD): ");
 	        String invoiceDate = sc.next();
-
+            inv.setInvoiceDate(numberOfItems);
+	        
 	        System.out.print("Enter number of items: ");
 	        int numberOfItems = sc.nextInt();
+	        inv.setNumberOfItems(numberOfItems);
 
 	        System.out.print("Enter total amount: ");
 	        int totalAmount = sc.nextInt();
+	        inv.setTotalAmount(totalAmount);
 	        
 	        System.out.print("Enter paid amount: ");
 	        int paidAmount = sc.nextInt();
+	        inv.setPaidAmount(paidAmount);
 	        
 	        System.out.print("Enter balance: ");
 	        int balance = sc.nextInt();
+	        inv.setBalance(balance);
 
 	        String sql = "INSERT INTO invoice VALUES('" + fullName + "','" + phoneNumber + "','" + invoiceDate + "','" + numberOfItems
 	                + "','" + totalAmount + "','" + paidAmount + "','" + balance + "')";

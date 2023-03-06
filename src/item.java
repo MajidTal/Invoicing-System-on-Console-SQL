@@ -14,6 +14,7 @@ public class item {
 	private int quantity;
 	private double qtyPrice;
 
+	item itm = new item();
 	ArrayList<item> itemList = new ArrayList<item>();
 	Scanner sc = new Scanner(System.in);
 
@@ -23,22 +24,28 @@ public class item {
 		int id = sc.nextInt();
 		this.setItemID(id);
 		sc.nextLine(); // consume the remaining newline character
-
+        itm.setItemID(id);
+		
 		System.out.print("Enter item name: ");
 		String name = sc.nextLine();
 		this.setItemName(name);
+		itm.setItemName(name);
 
 		System.out.print("Enter unit price: ");
 		double price = sc.nextDouble();
 		this.setUnitPrice(price);
+		itm.setUnitPrice(price);
+		
 
 		System.out.print("Enter quantity: ");
 		int qty = sc.nextInt();
 		this.setQuantity(qty);
+		itm.setQuantity(qty);
 
 		System.out.println("Enter qtyPrice ");
 		double total = price * qty;
 		this.setQtyPrice(total);
+		itm.setQtyPrice(price);
 	}
 
 	public int getItemID() {
