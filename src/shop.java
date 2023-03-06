@@ -11,7 +11,7 @@ public class shop {
 
 	Scanner sc = new Scanner(System.in);
 	ArrayList<shop> shopList = new ArrayList<shop>();
-	shop sh = new shop();
+	
 //	public void shopDetailes() {
 //		shop sh = new shop();
 //		System.out.print("Enter shop name: ");
@@ -103,10 +103,34 @@ public class shop {
 
 	public void shopName()
 	{
+		shop sh = new shop();
+		System.out.print("Enter shop name: ");
+		String name = sc.nextLine();
+		sh.setShopName(name);
 		
 	
 	};
 	
+	public void  header() {
+		shop sh = new shop();
+		System.out.print("Enter telephone number: ");
+		int tel = sc.nextInt();
+		sh.setTel(tel);
+
+		//sc.nextLine(); // consume the remaining newline character
+
+		System.out.print("Enter fax number: ");
+		String fax = sc.next();
+		sh.setFax(fax);
+
+		System.out.print("Enter email address: ");
+		String email = sc.nextLine();
+        sh.setEmail(email);
+		
+		System.out.print("Enter website URL: ");
+		String website = sc.nextLine();
+		sh.setWebsite(website);
+	}
 	public void InsertTable() {
 
 		try {
@@ -115,7 +139,7 @@ public class shop {
 			DriverManager.registerDriver(driver);
 			con = DriverManager.getConnection(url, user, pass);
 			Statement st = con.createStatement();
-
+			shop sh = new shop();
 			
 			System.out.print("Enter shop name: ");
 			String name = sc.nextLine();

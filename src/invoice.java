@@ -15,12 +15,12 @@ public class invoice {
 	private double paidAmount;
 	private double balance;
 
-	invoice inv = new invoice();
+
 	ArrayList<invoice> invoiceList = new ArrayList<invoice>();
 	Scanner sc = new Scanner(System.in);
 
 	public void invoiceDetalies() {
-
+		invoice inv = new invoice();
 		System.out.print("Enter customer full name: ");
 		String name = sc.nextLine();
 		this.setCustomerFullName(name);
@@ -144,7 +144,7 @@ public class invoice {
 	        DriverManager.registerDriver(driver);
 	        con = DriverManager.getConnection(url, user, pass);
 	        Statement st = con.createStatement();
-
+	        invoice inv = new invoice();
 	        System.out.print("Enter customer full name: ");
 	        String fullName = sc.next();
 	        inv.setCustomerFullName(fullName);

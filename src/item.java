@@ -14,12 +14,12 @@ public class item {
 	private int quantity;
 	private double qtyPrice;
 
-	item itm = new item();
+
 	ArrayList<item> itemList = new ArrayList<item>();
 	Scanner sc = new Scanner(System.in);
 
 	public void itemDetalies() {
-
+		item itm = new item();
 		System.out.print("Enter item ID: ");
 		int id = sc.nextInt();
 		this.setItemID(id);

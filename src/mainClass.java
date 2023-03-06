@@ -49,11 +49,11 @@ public class mainClass {
                     	   break;
                   //-----------------
                        case 2:
-                    	sh.InsertTable();
+                    	sh.shopName();
                     	   break;
                    //----------------
                        case 3:
-                    	   sh.InsertTable();
+                    	   sh.header();
                     	   break;
                     	   
                     //-----------------
