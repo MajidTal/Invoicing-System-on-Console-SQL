@@ -190,5 +190,19 @@ public class invoice {
 
 	}
 
+	{
+		
+		for (invoice element : invoiceList) {
+			System.out.println("---------- shop Details ------------");
+			System.out.println("the customer full name is " + element.getCustomerFullName());
+			System.out.println("the phone number is " + element.getPhoneNumber());
+			System.out.println("the invoice date is " + element.getInvoiceDate());
+			System.out.println("the total amount " + element.getTotalAmount());
+			System.out.println("the paid amount " + element.getPaidAmount());
+			System.out.println("the balance " + element.getBalance());
 
-}
+
+			System.out.println("---------------<>---------------");
+
+	}
+}}

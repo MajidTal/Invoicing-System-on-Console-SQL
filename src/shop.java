@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class shop {
@@ -9,6 +10,7 @@ public class shop {
 	private String Website;
 
 	Scanner sc = new Scanner(System.in);
+	ArrayList<shop> shopList = new ArrayList<shop>();
 
 //	public void shopDetailes() {
 //		shop sh = new shop();
@@ -160,4 +162,23 @@ public class shop {
 
 	}
 
-}
+	{
+	
+	
+	for (shop element : shopList) {
+		System.out.println("---------- shop Details ------------");
+		System.out.println("the shop name is " + element.getShopName());
+		System.out.println("the telephone number is " + element.getTel());
+		System.out.println("the fax number is " + element.getFax());
+		System.out.println("the email address is " + element.getEmail());
+		System.out.println("the website URL is " + element.getWebsite());
+
+		System.out.println("---------------<>---------------");
+
+	
+	
+	
+	
+	}	
+	
+	}}

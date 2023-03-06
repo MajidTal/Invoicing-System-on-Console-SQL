@@ -14,7 +14,7 @@ public class item {
 	private int quantity;
 	private double qtyPrice;
 
-	ArrayList<item> invoiceList = new ArrayList<item>();
+	ArrayList<item> itemList = new ArrayList<item>();
 	Scanner sc = new Scanner(System.in);
 
 	public void itemDetalies() {
@@ -152,4 +152,17 @@ public class item {
 	public void UpdateTable() {
 
 	}
-}
+	{
+		
+		for (item element : itemList) {
+			System.out.println("---------- shop Details ------------");
+			System.out.println("the itemID is " + element.getItemID());
+			System.out.println("the item name is " + element.getItemName());
+			System.out.println("the unit price is " + element.getUnitPrice());
+			System.out.println("the quantity is " + element.getQuantity());
+			System.out.println("the qtyPrice is " + element.getQtyPrice());
+
+			System.out.println("---------------<>---------------");
+
+	}
+}}
