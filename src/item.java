@@ -16,6 +16,7 @@ public class item {
 
 
 	ArrayList<item> itemList = new ArrayList<item>();
+	
 	Scanner sc = new Scanner(System.in);
 
 	public void itemDetalies() {
@@ -25,12 +26,14 @@ public class item {
 		this.setItemID(id);
 		sc.nextLine(); // consume the remaining newline character
         itm.setItemID(id);
+       
 		
 		System.out.print("Enter item name: ");
 		String name = sc.nextLine();
 		this.setItemName(name);
 		itm.setItemName(name);
-
+	
+		  
 		System.out.print("Enter unit price: ");
 		double price = sc.nextDouble();
 		this.setUnitPrice(price);
@@ -42,10 +45,12 @@ public class item {
 		this.setQuantity(qty);
 		itm.setQuantity(qty);
 
-		System.out.println("Enter qtyPrice ");
+		
 		double total = price * qty;
-		this.setQtyPrice(total);
 		itm.setQtyPrice(price);
+		System.out.println("qtyPrice: " + total);
+		
+		itemList.add(itm);
 	}
 
 	public int getItemID() {
@@ -120,21 +125,32 @@ public class item {
 	        con = DriverManager.getConnection(url, user, pass);
 	        Statement st = con.createStatement();
 
-	        item it = new item();
+			item itm = new item();
+
 	        System.out.print("Enter itemID: ");
 	        int itemID = sc.nextInt();
-
+	        itm.setItemID(itemID);
+			
+           
+	        
 	        System.out.print("Enter item name: ");
 	        String itemName = sc.next();
+	    	itm.setItemName(itemName);
 
 	        System.out.print("Enter unit price: ");
 	        int unitPrice = sc.nextInt();
+	        itm.setUnitPrice(unitPrice);
+	        
 
 	        System.out.print("Enter quantity: ");
 	        int quantity = sc.nextInt();
+	        itm.setQuantity(quantity);
 
 	        System.out.print("Enter qtyPrice: ");
 	        int qtyPrice = sc.nextInt();
+	    	itm.setQtyPrice(qtyPrice);
+	    	
+	    	itm.itemList.add(itm);
 
 	        String sql1 = "INSERT INTO item VALUES('" + itemID + "','" + itemName + "','" + unitPrice + "','" + quantity
 	                + "','" + qtyPrice + "')";
@@ -159,17 +175,18 @@ public class item {
 	public void UpdateTable() {
 
 	}
-	{
+	
+		public void getloadItemDetailes() {
+			for (item element : itemList) {
+				System.out.println("---------- shop Details ------------");
+				System.out.println("the itemID is " + element.getItemID());
+				System.out.println("the item name is " + element.getItemName());
+				System.out.println("the unit price is " + element.getUnitPrice());
+				System.out.println("the quantity is " + element.getQuantity());
+				System.out.println("the qtyPrice is " + element.getQtyPrice());
+
+				System.out.println("---------------<>---------------");
+				
+		}
 		
-		for (item element : itemList) {
-			System.out.println("---------- shop Details ------------");
-			System.out.println("the itemID is " + element.getItemID());
-			System.out.println("the item name is " + element.getItemName());
-			System.out.println("the unit price is " + element.getUnitPrice());
-			System.out.println("the quantity is " + element.getQuantity());
-			System.out.println("the qtyPrice is " + element.getQtyPrice());
-
-			System.out.println("---------------<>---------------");
-
-	}
 }}

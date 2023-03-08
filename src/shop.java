@@ -124,11 +124,11 @@ public class shop {
 		sh.setFax(fax);
 
 		System.out.print("Enter email address: ");
-		String email = sc.nextLine();
+		String email = sc.next();
         sh.setEmail(email);
 		
 		System.out.print("Enter website URL: ");
-		String website = sc.nextLine();
+		String website = sc.next();
 		sh.setWebsite(website);
 	}
 	public void InsertTable() {
@@ -209,6 +209,6 @@ public class shop {
 	
 	
 	
-	}	
+	}
 	
 	}}

@@ -20,35 +20,39 @@ public class invoice {
 	Scanner sc = new Scanner(System.in);
 
 	public void invoiceDetalies() {
-		invoice inv = new invoice();
+	     invoice inv = new invoice();
+		//invoice inv1 = new invoice();
 		System.out.print("Enter customer full name: ");
 		String name = sc.nextLine();
-		this.setCustomerFullName(name);
+		inv.setCustomerFullName(name);
 
 		System.out.print("Enter phone number: ");
 		int phoneNumber = sc.nextInt();
-		this.setPhoneNumber(phoneNumber);
+		inv.setPhoneNumber(phoneNumber);
 		sc.nextLine(); // consume the remaining newline character
 
 		System.out.print("Enter invoice date: ");
 		int invoiceDate = sc.nextInt();
-		this.setInvoiceDate(invoiceDate);
+		inv.setInvoiceDate(invoiceDate);
 
 		System.out.print("Enter number of items: ");
 		int numberOfItems = sc.nextInt();
-		this.setNumberOfItems(numberOfItems);
+		inv.setNumberOfItems(numberOfItems);
 
 		System.out.print("Enter total amount: ");
 		double totalAmount = sc.nextDouble();
-		this.setTotalAmount(totalAmount);
+		inv.setTotalAmount(totalAmount);
 
 		System.out.print("Enter paid amount: ");
 		double paidAmount = sc.nextDouble();
-		this.setPaidAmount(paidAmount);
+		inv.setPaidAmount(paidAmount);
 
-		System.out.println("Enter the balance");
+		
 		double balance = totalAmount - paidAmount;
-		this.setBalance(balance);
+		inv.setBalance(balance);
+		System.out.println("balance: " +balance);
+		
+        invoiceList.add(inv);
 	}
 
 	public String getCustomerFullName() {
@@ -137,7 +141,7 @@ public class invoice {
 	    }
 	}
 
-	public void insertData() {
+	public void insertInvoiceData() {
 	    try {
 	        Connection con = null;
 	        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
@@ -172,6 +176,8 @@ public class invoice {
 	        System.out.print("Enter balance: ");
 	        int balance = sc.nextInt();
 	        inv.setBalance(balance);
+	        
+
 
 	        String sql = "INSERT INTO invoice VALUES('" + fullName + "','" + phoneNumber + "','" + invoiceDate + "','" + numberOfItems
 	                + "','" + totalAmount + "','" + paidAmount + "','" + balance + "')";
@@ -200,6 +206,8 @@ public class invoice {
 
 	{
 		
+	}
+		public void getloadInvoiceDetailes() {
 		for (invoice element : invoiceList) {
 			System.out.println("---------- shop Details ------------");
 			System.out.println("the customer full name is " + element.getCustomerFullName());
@@ -213,4 +221,5 @@ public class invoice {
 			System.out.println("---------------<>---------------");
 
 	}
+		
 }}
