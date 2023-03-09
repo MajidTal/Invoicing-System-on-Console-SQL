@@ -2,8 +2,8 @@
 public class MainMenu {
 	public static void mainMenu() {
 
-		MainMenu ma = new MainMenu(); 
-		
+		MainMenu ma = new MainMenu();
+
 		System.out.println("Please choose an option:");
 		System.out.println("1- Shop Settings");
 		System.out.println("2- Manage Shop Items");

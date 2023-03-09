@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class mainClass {
-	
 
-
+	invoice in = new invoice();
 	item it = new item();
+
 	private static void printMainMenu() {
 		System.out.println("1-Shop Settings");
 		System.out.println("2- Manage Shop Items");
@@ -18,15 +18,18 @@ public class mainClass {
 		System.out.println("8- Exit");
 		System.out.println("Enter your option");
 	}
-		shop sh = new shop();
-		ArrayList<item> itemList = new ArrayList<item>();
+
+	shop sh = new shop();
+	ArrayList<item> itemList = new ArrayList<item>();
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
 		shop sh = new shop();
 		boolean condition = true;
 		while (condition) {
+			item it = new item();
+			invoice in = new invoice();
 			printMainMenu();
 			int option = sc.nextInt();
 
@@ -42,17 +45,16 @@ public class mainClass {
 
 					switch (subOption1) {
 					case 1:
-						// shop.loadData();
-						
-						item it = new item();
-						it.itemDetalies(); // to enter item details
-						
-						invoice in = new invoice();
-						in.invoiceDetalies(); // to enter invoice details
-						
-						it.getloadItemDetailes();
-						in.getloadInvoiceDetailes();
-						
+						sh.loadshop();
+						// item it = new item();
+						// it.itemDetalies(); // to enter item details
+
+						// invoice in = new invoice();
+						// in.invoiceDetalies(); // to enter invoice details
+
+						// it.getloadItemDetailes();
+						// in.getloadInvoiceDetailes();
+
 						break;
 					case 2:
 						System.out.println("Enter the shop name:");
@@ -83,22 +85,25 @@ public class mainClass {
 					int subOption2 = sc.nextInt();
 
 					switch (subOption2) {
+
 					case 1:
-						
-						  item it = new item();
-						  it.itemDetalies();
+
+						it.itemDetalies();
 
 						break;
 					case 2:
-						System.out.println("Enter the item name to delete:");
-						String itemName = sc.next();
+
+						// String itemName = sc.next();
 						// shop.deleteItem(itemName);
+
+						it.deleteItemTable();
 						break;
 					case 3:
-						System.out.println("Enter the item name and new price:");
+						System.out.println("Change Item Price:");
 						break;
 					case 4:
 						System.out.println("4- Report All Items");
+						
 						break;
 					case 5:
 						System.out.println("5- Go Back");
@@ -106,29 +111,25 @@ public class mainClass {
 					default:
 						System.out.println("Invalid option");
 						break;
-				
-					}}
-				
+
+					}
+				}
 
 			case 3:
 				invoice inv = new invoice();
 
-	inv.insertInvoiceData();
+				inv.insertInvoiceData();
 				break;
 			case 4:
-				
-				item it = new item();
-				System.out.println("NO of items: " +it.itemList.size());
-				
-				
-				
-				invoice in = new invoice();
-				System.out.println("NO of invoices: " +in.invoiceList.size());
-				 
-				 
-				
+
+				System.out.println("NO of items: " + it.itemList.size());
+
+				System.out.println("NO of invoices: " + in.invoiceList.size());
+
 				break;
 			case 5:
+
+				in.ReportAllInvoices();
 
 				break;
 			case 6:

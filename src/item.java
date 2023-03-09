@@ -167,10 +167,36 @@ public class item {
 	    }
 	}
 
+	public void deleteItemTable() 
+	{
+		        String url = "jdbc:sqlserver://localhost:1433;" +
+		                "databaseName=Invoicing system;" +
+		                "encrypt=true;" +
+		                "trustServerCertificate=true";
+		        String user = "sa";
+		        String pass = "root";
+		 Connection con = null;
+		        try {
+		Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+		DriverManager.registerDriver(driver);
+		            con = DriverManager.getConnection(url, user, pass);
+		 Statement st = con.createStatement();
+		 System.out.println("Enter the id number of the item you want to delete ");
+		 int deletedItems = sc.nextInt();
+		String sql = "DELETE FROM [dbo].[item]\r\n"
+				+ "      WHERE  itemID = " + deletedItems;
+		Integer m = st.executeUpdate(sql);
+		            if (m >= 1) {
+		System.out.println("inserted successfully : " + sql);
+		} else {
+		System.out.println("this ID is not part of the data base");
+		}
 
-	public void deleteTable() {
-
-	}
+		            con.close();
+		} catch (Exception ex) {
+		System.err.println(ex);
+		}
+		}
 
 	public void UpdateTable() {
 

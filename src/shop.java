@@ -192,9 +192,9 @@ public class shop {
 
 	}
 
-	{
 	
 	
+	public void loadshop() {
 	for (shop element : shopList) {
 		System.out.println("---------- shop Details ------------");
 		System.out.println("the shop name is " + element.getShopName());
@@ -207,8 +207,7 @@ public class shop {
 
 	
 	
-	
-	
 	}
+	
 	
 	}}

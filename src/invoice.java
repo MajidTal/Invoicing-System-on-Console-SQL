@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class invoice {
 	private String customerFullName;
 	private int phoneNumber;
-	private int invoiceDate;
+	private String invoiceDate;
 	private int numberOfItems;
 	private double totalAmount;
 	private double paidAmount;
@@ -32,8 +32,8 @@ public class invoice {
 		sc.nextLine(); // consume the remaining newline character
 
 		System.out.print("Enter invoice date: ");
-		int invoiceDate = sc.nextInt();
-		inv.setInvoiceDate(invoiceDate);
+		String invoiceDate = sc.next();
+	    inv.setInvoiceDate(invoiceDate);
 
 		System.out.print("Enter number of items: ");
 		int numberOfItems = sc.nextInt();
@@ -71,11 +71,11 @@ public class invoice {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public int getInvoiceDate() {
+	public String getInvoiceDate() {
 		return invoiceDate;
 	}
 
-	public void setInvoiceDate(int invoiceDate) {
+	public void setInvoiceDate(String invoiceDate) {
 		this.invoiceDate = invoiceDate;
 	}
 
@@ -154,13 +154,13 @@ public class invoice {
 	        inv.setCustomerFullName(fullName);
 
 	        System.out.print("Enter phone number: ");
-	        String phoneNumber = sc.next();
-	        inv.setPhoneNumber(invoiceDate);
+	        int phoneNumber = sc.nextInt();
+	        inv.setPhoneNumber(phoneNumber);
 	        
-	        System.out.print("Enter invoice date (YYYY-MM-DD): ");
+	        System.out.print("Enter invoice date: ");
 	        String invoiceDate = sc.next();
-            inv.setInvoiceDate(numberOfItems);
-	        
+            inv.setInvoiceDate(invoiceDate);	
+            
 	        System.out.print("Enter number of items: ");
 	        int numberOfItems = sc.nextInt();
 	        inv.setNumberOfItems(numberOfItems);
@@ -196,17 +196,38 @@ public class invoice {
 	}
 
 
-	public void deleteTable() {
-
-	}
-
-	public void UpdateTable() {
-
-	}
-
-	{
+	
 		
+		
+		
+
+	
+
+	public void UpdateTable() 
+	{
+
 	}
+
+	
+		
+     public void ReportAllInvoices()
+ {
+    	 item it = new item();
+    		invoice in = new invoice();
+    		
+
+	 System.out.println("Invoice No:" + in.invoiceList.size());
+	System.out.println("Invoice Date:" + in.invoiceList.size());	
+	System.out.println("Customer Name:" + in.invoiceList.size());
+    System.out.println("No of items:" + it.itemList.size());
+	System.out.println("Total:" + it.itemList.size());
+	System.out.println("Balance:" + in.invoiceList.size());
+			
+}
+		
+
+		
+	
 		public void getloadInvoiceDetailes() {
 		for (invoice element : invoiceList) {
 			System.out.println("---------- shop Details ------------");
