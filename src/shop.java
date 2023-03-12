@@ -12,29 +12,6 @@ public class shop {
 	Scanner sc = new Scanner(System.in);
 	ArrayList<shop> shopList = new ArrayList<shop>();
 	
-//	public void shopDetailes() {
-//		shop sh = new shop();
-//		System.out.print("Enter shop name: ");
-//		String name = sc.nextLine();
-//		sh.setShopName(name);
-//
-//		System.out.print("Enter telephone number: ");
-//		int tel = sc.nextInt();
-//		sh.setTel(tel);
-//		sc.nextLine(); // consume the remaining newline character
-//
-//		System.out.print("Enter fax number: ");
-//		String fax = sc.nextLine();
-//		sh.setFax(fax);
-//
-//		System.out.print("Enter email address: ");
-//		String email = sc.nextLine();
-//		sh.setEmail(email);
-//
-//		System.out.print("Enter website URL: ");
-//		String website = sc.nextLine();
-//		sh.setWebsite(website);
-//	}
 
 	public String getShopName() {
 		return ShopName;
