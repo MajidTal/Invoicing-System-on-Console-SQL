@@ -6,7 +6,6 @@ public class mainClass {
 	invoice in = new invoice();
 	item it = new item();
 
-	
 	private static void printMainMenu() {
 		System.out.println("1-Shop Settings");
 		System.out.println("2- Manage Shop Items");
@@ -18,32 +17,29 @@ public class mainClass {
 		System.out.println("7- Program Statistics (Print each Main Menu Item with how many times selected).");
 		System.out.println("8- Exit");
 		System.out.println("Enter your option");
-		
+
 	}
 
 	shop sh = new shop();
 	ArrayList<item> itemList = new ArrayList<item>();
 
-	
-	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-	boolean condition = true;
-		
-System.out.println("Enter user :");
-String user = sc.nextLine();
-System.out.println("Enter Pasword :");
-String Pasword = sc.nextLine();
-if(!user.equalsIgnoreCase("sa") || !Pasword.equalsIgnoreCase("root")) {
-System.out.println("Wrong info");
-condition =false;
+		boolean condition = true;
 
-}
-	
+		System.out.println("Enter user :");
+		String user = sc.nextLine();
+		System.out.println("Enter Pasword :");
+		String Pasword = sc.nextLine();
+		if (!user.equalsIgnoreCase("sa") || !Pasword.equalsIgnoreCase("root")) {
+			System.out.println("Wrong info");
+			condition = false;
+
+		}
+
 		shop sh = new shop();
 		while (condition) {
-			
-			
+
 			item it = new item();
 			invoice in = new invoice();
 			printMainMenu();
@@ -61,12 +57,14 @@ condition =false;
 
 					switch (subOption1) {
 					case 1:
-						sh.loadshop();
+					System.out.println("Items Details");
+					System.out.println("----------------------");
+					it.LoadItem();
+					System.out.println("Invoice Details");
+					System.out.println("----------------------");
+					in.LoadInvoice();
 						// it.itemDetalies(); // to enter item details
 						 //in.invoiceDetalies(); // to enter invoice details
-
-						 it.getloadItemDetailes();
-						 in.getloadInvoiceDetailes();
 
 						break;
 					case 2:
@@ -100,24 +98,23 @@ condition =false;
 					switch (subOption2) {
 
 					case 1:
-
 						it.itemDetalies();
-
 						break;
 					case 2:
 
 						// String itemName = sc.next();
 						// shop.deleteItem(itemName);
-                        it.DeleteItem();
+						it.DeleteItem();
 						it.deleteItemTable();
+
 						break;
 					case 3:
 						System.out.println("Change Item Price:");
-						// should be function 
+						// should be function
 						break;
 					case 4:
 						System.out.println("4- Report All Items");
-                        // should be function 
+						it.ReportAllItems();
 						break;
 					case 5:
 						System.out.println("5- Go Back");
@@ -125,11 +122,12 @@ condition =false;
 						break;
 
 					}
-					subMenu2Condition=false;
+					subMenu2Condition = false;
 				}
 
 			case 3:
 				invoice inv = new invoice();
+				// inv.createTable();
 
 				inv.insertInvoiceData();
 				break;
@@ -146,16 +144,17 @@ condition =false;
 
 				break;
 			case 6:
-                    
+				in.search();
 				break;
 			case 7:
 
 				break;
 			case 8:
-
-				break;
+				condition = false;
+				System.out.println("goodbye");
 
 			}
+
 		}
 	}
 }
